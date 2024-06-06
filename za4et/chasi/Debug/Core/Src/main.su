@@ -1,0 +1,5 @@
+../Core/Src/main.c:61:9:RTC_ConvertFromDec	24	static
+../Core/Src/main.c:66:9:RTC_ConvertFromBinDec	24	static
+../Core/Src/main.c:80:5:main	80	static,ignoring_inline_asm
+../Core/Src/main.c:248:6:SystemClock_Config	72	static
+../Core/Src/main.c:288:6:Error_Handler	4	static,ignoring_inline_asm

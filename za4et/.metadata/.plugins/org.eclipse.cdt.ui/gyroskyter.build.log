@@ -1,0 +1,10 @@
+12:07:18 **** Incremental Build of configuration Debug for project gyroskyter ****
+make -j8 all 
+arm-none-eabi-size   gyroskyter.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22732	     20	   1968	  24720	   6090	gyroskyter.elf
+Finished building: default.size.stdout
+ 
+
+12:07:19 Build Finished. 0 errors, 0 warnings. (took 456ms)
+

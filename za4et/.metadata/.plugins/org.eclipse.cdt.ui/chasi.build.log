@@ -1,0 +1,33 @@
+21:52:31 **** Incremental Build of configuration Debug for project chasi ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/stm32f1xx_it.c:63:8: warning: type defaults to 'int' in declaration of 'buff_1' [-Wimplicit-int]
+   63 | extern buff_1;
+      |        ^~~~~~
+../Core/Src/stm32f1xx_it.c: In function 'EXTI0_IRQHandler':
+../Core/Src/stm32f1xx_it.c:229:48: warning: passing argument 3 of 'HAL_TIM_PWM_Start_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  229 |   HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_1, buff_1, 3000);
+      |                                                ^~~~~~
+      |                                                |
+      |                                                int
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:334,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/stm32f1xx_it.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:1946:100: note: expected 'const uint32_t *' {aka 'const long unsigned int *'} but argument is of type 'int'
+ 1946 | HAL_StatusTypeDef HAL_TIM_PWM_Start_DMA(TIM_HandleTypeDef *htim, uint32_t Channel, const uint32_t *pData,
+      |                                                                                    ~~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "chasi.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\123\Desktop\za4et\chasi\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="chasi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: chasi.elf
+ 
+arm-none-eabi-size   chasi.elf 
+arm-none-eabi-objdump -h -S  chasi.elf  > "chasi.list"
+   text	   data	    bss	    dec	    hex	filename
+  31224	   1120	   1920	  34264	   85d8	chasi.elf
+Finished building: default.size.stdout
+ 
+Finished building: chasi.list
+ 
+
+21:52:32 Build Finished. 0 errors, 2 warnings. (took 1s.89ms)
+
